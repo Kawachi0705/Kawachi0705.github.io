@@ -1,26 +1,25 @@
-<!DOCTYPE HTML>
 <html>
 <head>
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript">
-        function addPtag(){
-            console.log('onclick');
-            
-            $.ajax({
-                url:"/ajax.html",
-                success:function(result){
-                    $('#ajax-contents').append(result);
-                }
-            });
-        }
-    </script>
-    <title>かわひと</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	function addPtag(){
+		console.log('onclick');
+		
+		$.ajax({
+  			url: "https://aed.azure-mobile.net/api/AEDSearch?lat=35.96&lng=136.185&r=300",
+		  	success: function( result ) {
+    			$( "#ajax-contents" ).append( result );
+  			}
+		});
+		
+	}
+</script>
 </head>
 <body>
-    <h1>Hello</h1>
-    <div id="ajax-contents"></div>
-    <button type="button" onClick="addPtag()">add Ptag</button>
+<h1>hello!world</h1>
+<div id="ajax-contents"></div>
+<button type="button" onClick="addPtag()">add ptag</button>
+
+
 </body>
-    
 </html>
